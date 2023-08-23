@@ -3,10 +3,10 @@
 
 class DBCOnnection {
     private static $pdo;
-    public static function makeConnection () {
+    public static function makeConnection ($array) {
         try {
             self::$pdo = self::$pdo ? 
-                :new PDO('mysql:host=localhost;dbname=basic-database','root' , '');
+                :new PDO("mysql:host={$array['host']};dbname={$array['name']}",$array['user'] , $array['password']);
             return self::$pdo;
         } catch (PDOException $e){
             $e->getMessage();

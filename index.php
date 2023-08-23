@@ -6,6 +6,7 @@ require './_init.php';
 
 Router::make()
     ->get('' , [TaskController::class , 'index'])
-    // ->get('about' , 'app/controllers/about.php')
-    // ->post('create/task' , [TaskController::class , 'create'])
+    ->post('create/task' , [TaskController::class , 'create'])
+    ->get('delete/task' , [TaskController::class , 'delete'])
+    ->get('update/task' , [TaskController::class , 'update'])
     ->resolve(Request::uri() , Request::type());
