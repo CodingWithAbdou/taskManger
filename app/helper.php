@@ -2,6 +2,7 @@
 
 <?php
 
+use App\App;
 
 function home() {
     return trim(App::get('config')['app']['home_url'] , '/');

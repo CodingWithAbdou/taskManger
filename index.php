@@ -1,5 +1,7 @@
 <?php 
 
+use App\Core\Request;
+use App\Core\Router;
 
 require './_init.php';
 

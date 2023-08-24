@@ -1,6 +1,6 @@
-
-
 <?php 
+
+namespace App\Core;
 
 class Router 
 {
@@ -33,7 +33,7 @@ class Router
             $this->callAction(...$array);
         }else {
             echo  $uri;
-            throw new Exception("page is not found");
+            throw new \Exception("page is not found");
         }
     }
 

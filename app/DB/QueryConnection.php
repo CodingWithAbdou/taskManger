@@ -1,10 +1,12 @@
-
 <?php
 
-class QueryConnection {
+namespace App\Db;
+
+class QueryConnection 
+{
     private static $pdo;
 
-    public static function make(PDO $pdo) 
+    public static function make(\PDO $pdo) 
     {
         self::$pdo = $pdo;
     }
@@ -12,14 +14,12 @@ class QueryConnection {
     public static function getQuery ( $tabel_name , $method = null) 
     {   
         $query_str = "SELECT * FROM  $tabel_name " ;
-
         if(is_array($method)) {
             $query_str .= " WHERE " . implode(' ' , $method) ;
         }
-      
         $query = self::$pdo -> prepare($query_str );
         $query -> execute();
-        return $query -> fetchAll(PDO::FETCH_OBJ );
+        return $query -> fetchAll(\PDO::FETCH_OBJ );
     }
 
     public static function insert ($tabel , $data) 

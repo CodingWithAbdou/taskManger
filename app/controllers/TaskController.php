@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\Request;
+use App\Db\QueryConnection;
 
 class TaskController {
     public function index() 
