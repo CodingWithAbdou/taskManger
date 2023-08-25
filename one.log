@@ -1,0 +1,2 @@
+[2023-08-25T07:42:53.749098+02:00] PHP_BASICS.INFO: INSERT INTO `newdata` (description,completed) VALUE (?,?) [] []
+[2023-08-25T07:42:53.773577+02:00] PHP_BASICS.INFO: SELECT * FROM  newdata  [] []
