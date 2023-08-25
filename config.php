@@ -1,16 +1,20 @@
 <?php 
 
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
 
 return [
     
     'app' => [
-        'home_url' => 'http://localhost/taskManger',
+        'home_url' => $_ENV['APP_URL'],
     ],
 
     'database' => [
-        'host' => 'localhost',
-        'name' => 'basic-database',
-        'user' => 'root',
-        'password' => ''
+        'host' => $_ENV['DB_HOST'],
+        'name' => $_ENV['DB_NAEM'],
+        'user' => $_ENV['DB_USER'],
+        'password' => $_ENV['DB_PASSWORD']
     ]
-];
+]; 
